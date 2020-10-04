@@ -5,7 +5,7 @@ module.exports = {
     author: `Guhaprasaanth Nandagopal`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`, //Can also use '' but `` are usualu Gatbsy standard, as it also allows  using JS expression
+    `gatsby-plugin-react-helmet`, //Can also use '' but `` are usually Gatbsy standard, as it also allows  using JS expression
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
