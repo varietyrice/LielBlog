@@ -1,18 +1,19 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
+import { Link } from "gatsby"
 // Hooks
-import { useSiteConfigQuery } from 'hooks/useSiteConfigQuery'
+import { useSiteConfigQuery } from "hooks/useSiteConfigQuery"
+// styles
+import {Wrapper, Logo} from "./Header.styles"
 
 const Header = ({ siteTitle = `` }) => {
   const siteConfig = useSiteConfigQuery();
 
   return(
-    <div>
+    <Wrapper>
       <Link to="/">
-        <img src={siteConfig.logo.publicURL} alt={siteTitle} />
+        <Logo src={siteConfig.logo.publicURL} alt={siteTitle} />
       </Link>  
-    </div>
+    </Wrapper>
   )
 }
 
