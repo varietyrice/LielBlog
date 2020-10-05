@@ -32,7 +32,7 @@ export const lightTheme = {
 }
 
 export const GlobalStyles = createGlobalStyle`
-  :root {
+  :root { 
     --site-max-width: 1200px;
   }
 
