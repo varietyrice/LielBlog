@@ -16,9 +16,7 @@ export const useSiteConfigQuery = () =>{
           }
         }
       }
-      
-    `)
-
-
+    
+  `)
     return data.markdownRemark.frontmatter
 }
