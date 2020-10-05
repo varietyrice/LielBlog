@@ -1,4 +1,5 @@
 import SEO from './SEO'
 import Layout from './Layout'
+import Header from './Header'
 
-export { SEO, Layout }
+export { SEO, Layout, Header}

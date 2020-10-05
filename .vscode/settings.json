@@ -1,0 +1,10 @@
+{
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html"
+    },
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "emmet.showSuggestionsAsSnippets": true
+}
