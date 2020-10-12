@@ -1,18 +1,26 @@
 import React from 'react'
-import {Link} from 'gatdby'
+import {Link} from 'gatsby'
 // Components
 // Hooks
+import {useHeroQuery} from 'hooks/useHeroQuery'
 // Styles
 
 const Hero = () => {
+    const {
+        heroImage,
+        heroImageText,
+        heroImageBtnText,
+        heroImageBtnLink
+    } = useHeroQuery();
+    console.log(heroImage);
     return (
         <div>
             <div>
                 <div>
-                    <h2>Title</h2>
-                    <Link to="/">
+                    <h2>{heroImageText}</h2>
+                    <Link to={heroImageBtnLink}>
                         <button>
-                            click me
+                            {heroImageBtnText}
                         </button>
                     </Link>
                 </div>
