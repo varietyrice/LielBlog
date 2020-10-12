@@ -4,4 +4,14 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+// Using this file as like _app.js in Next.js
+import React from 'react'
+import ModeProvider from 'context/ModeProvider'
+
+export const WrapRootElement = ({ element }) => (
+        <ModeProvider>
+            {element}
+        </ModeProvider>
+    )
+
+
