@@ -1,18 +1,31 @@
 import React from "react"
-// import { Link } from "gatsby"
-
-import {Layout, SEO, Hero, BlogPostCard} from "components"
 import { graphql } from "gatsby"
+// Components
+import {Layout, SEO, Hero, BlogPostCard} from "components"
 
 
 const IndexPage = ({data}) => {
+  const posts = data.allMarkdownRemark.edges
   console.log(data);
   return(
     <Layout>
       <SEO title="Home" />
       <Hero />
       <main>
-        <BlogPostCard />
+        {posts.map(({ node }, i) =>{
+          const title = node.frontmatter.title;
+          return(
+            <BlogPostCard 
+              key={i}
+              slug="/"
+              title={title}
+              date={node.frontmatter.date}
+              readingTime={node.fields.readingTime.text}
+              excerpt={node.excerpt}
+              image={node.frontmatter.image.childImageSharp.fluid}
+            />
+          )
+        })}
       </main>
     </Layout>
   )
@@ -45,6 +58,13 @@ export const indexPageData = graphql`
           frontmatter {
             date
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt
         }
