@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const ModeContext = React.createContext([]);
 
-const ModeProvider = ({ children }) =>{
+const ModeProvider = ({ children }) => {
     const [darkMode, setDarkMode] = useState(true);
 
     return(

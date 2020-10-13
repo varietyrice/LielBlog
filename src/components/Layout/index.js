@@ -1,29 +1,31 @@
 /**
  * Layout component that queries for data
- * with Gatsby's useStaticQuery component
+ * with Gatsby"s useStaticQuery component
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import {ThemeProvider} from "styled-components"
 // Hooks
-import { useMetaDataQuery } from 'hooks/useMetaDataQuery'
+import { useMetaDataQuery } from "hooks/useMetaDataQuery"
+// Context
+import { ModeContext } from "context/ModeProvider"
 // Components
-import Header from '../Header'
+import Header from "components/Header"
 // Styles
 import { GlobalStyles, lightTheme, darkTheme } from "styles/GlobalStyles"
 
 
 const Layout = ({ children }) => {
   const data = useMetaDataQuery();
-  console.log(data);
+  const [ darkMode ] = useContext(ModeContext);
   return(
-    <ThemeProvider theme={darkTheme}>
-    <GlobalStyles />
-    <Header />
-    {children}
-  </ThemeProvider>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <GlobalStyles />
+      <Header siteTitle={data.title} />
+      {children}
+    </ThemeProvider>
     )
   }
 
