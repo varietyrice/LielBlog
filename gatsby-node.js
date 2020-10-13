@@ -5,6 +5,7 @@
 
 const path = require('path');
 const { createFilePath } = require("gatsby-source-filesystem");
+const { graphql } = require( 'gatsby' );
 
 // Configure the Node server to add the slug to the markdown files, to enable querying the data using GraphQL
 // Create Slug for posts | onCreateNode - avaliable in NodeAPI in Gatsby, it willbe exe during build
@@ -24,6 +25,37 @@ exports.onCreateNode = ({ node, getNode, actions }) =>{
       value: slug
     })
   }
+}
+
+// createPages -> create pages for posts, dynamically || async -> for fetching data for pages
+exports.createPages = async ({ graphql, actions }) =>{
+  const { createPage } = actions;
+  const content = await graphql(`
+    {
+      posts: allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}) {
+        edges {
+          node {
+            frontmatter {
+              published
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      pages: allMarkdownRemark(filter: {frontmatter: {type: {eq: "page"}}}) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(content)
 }
  
 // For Absolute Imports
