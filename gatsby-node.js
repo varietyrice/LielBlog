@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  // Do nothign if there is any error in data fetch
+  // Do nothing if there is any error in data fetch
   if (content.error) return
   // Collect all the data
   const allPosts = content.data.posts.edges

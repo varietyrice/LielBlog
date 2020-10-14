@@ -26,20 +26,21 @@ const Post = ({data}) => {
 export default Post
 
 export const query = graphql`
-    query($slug: String!){
-        markdownRemark(fields: { slug: { eq: $slug } }){
-            html
-            frontmatter{
-                title
-                date
-                image{
-                    childImageSharp{
-                        fluid(maxWidth: 2000){
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+        date
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid
             }
+          }
         }
+      }
     }
+  }
 `
+
