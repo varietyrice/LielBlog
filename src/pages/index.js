@@ -36,18 +36,12 @@ export default IndexPage
 
 // Created a PageQuery using GraphQL to extract the blogposts as it's a dynamic query involving many-
 //- variables to extract the blogpost data
-export const indexPageData = graphql`
-  query BlogListQuery {
+export const indexQuery = graphql`
+  query blogListQuery {
     allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          type: {eq: "post"}
-        }
-      }, 
-        sort: {
-          fields: frontmatter___date, 
-          order: DESC
-        }) {
+      filter: { frontmatter: { type: { eq: "post" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           fields {
@@ -71,5 +65,4 @@ export const indexPageData = graphql`
       }
     }
   }
-
 `
