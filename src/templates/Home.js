@@ -13,11 +13,11 @@ const IndexPage = ({data}) => {
       <Hero />
       <main>
         {posts.map(({ node }, i) =>{
-          const title = node.frontmatter.title;
+          const title = node.frontmatter.title || node.fields.slug
           return(
             <BlogPostCard 
-              key={i}
-              slug="/"
+              key={node.fields.slug}
+              slug={node.fields.slug}
               title={title}
               date={node.frontmatter.date}
               readingTime={node.fields.readingTime.text}
@@ -36,15 +36,21 @@ export default IndexPage
 
 // Created a PageQuery using GraphQL to extract the blogposts as it's a dynamic query involving many-
 //- variables to extract the blogpost data
+
+// Conveting the StaticQuery to a PageQuery, to use the variables, provided to the page context, which
+//- are available to be used in the PageQuery, to filter out the published posts, for displaying
 export const indexQuery = graphql`
-  query blogListQuery {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "post" } } }
+      limit: $limit
+      skip: $skip
+      filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
         node {
           fields {
+            slug
             readingTime {
               text
             }
