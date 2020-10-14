@@ -65,7 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/Post.js`),
-        context: {
+        context: { // Sending data to the page context
           // Data passed in here, is available in page query as variables
           slug: node.fields.slug,
         },
@@ -86,6 +86,23 @@ exports.createPages = async ({ graphql, actions }) => {
     
   })
 }
+
+// Create the Archive Pages
+const postsPerPage = 5;
+const numPages = Meth.ceil(allPosts.length / postsPerPage);
+Array.from({ length: numPages }) //Creating an empty array as per the available number of posts
+  .forEach((_,i)=>{ // _ => 1st value won't be used
+    createPage({
+      path: i === 0 ? `/` : `/${i+1}` ,
+      component: path.resolve(`./src/templates/Home.js`),
+      context: {
+        limit: postsPerPage, // Pagination
+        skip: i * postsPerPage, // For informing GraphQL query that how many posts to skip
+        numPages, // Number of pages after pagination
+        currentPage: i + 1, // i starts at 0 => Home page
+      }
+    })
+  })
 
 // For absolute imports
 exports.onCreateWebpackConfig = ({ actions }) => {
