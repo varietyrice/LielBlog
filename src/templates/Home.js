@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 // Components
-import {Layout, SEO, Hero, BlogPostCard} from "components"
+import {Layout, SEO, Hero, BlogPostCard, PageNavigation} from "components"
 
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data, pageContext }) => { //pageContext is a default prop, available on all the pages
   const posts = data.allMarkdownRemark.edges
   console.log(data);
   return(
@@ -12,6 +12,10 @@ const IndexPage = ({data}) => {
       <SEO title="Home" />
       <Hero />
       <main>
+        <PageNavigation
+            currentPage={pageContext.currentPage}
+            numPages={pageContext.numPages}
+        />
         {posts.map(({ node }, i) =>{
           const title = node.frontmatter.title || node.fields.slug
           return(
