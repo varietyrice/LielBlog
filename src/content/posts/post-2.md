@@ -1,10 +1,10 @@
 ---
 type: 'post'
-date: '2020-02-15'
-image: '../../images/liel-green.jpg'
-slug: 'post-2'
-title: 'The evening time encounter'
+date: '2020-02-14'
+image: '../../images/liel-white.jpg'
+slug: 'post-1'
+title: 'Mesmerizing Morning'
 published: true
 ---
 
-It was a beautiful Friday evening, I just packed my bags and took off from my work. Just as I was crossing the park, I saw him coming towards me talking with someone over his phone. At that moment, I got startled and didn't know what to do with my mind cluttered with work stuff. I just took my iPad to correct my hair. Whilst all this turmoil in my mind, I was unaware that he was looking at me all along. Especially this is one picture that he still cherishes, looking at, every time.
+I was reading a book, seated beside my window, ignoring the beautiful sunny afternoon. Just as I was too immersed reading the book, a group of birds stole my attention. Their singing was so pleasant addictive, which made me hard to continue reading the book. I slowly closed the book and placed it over my reading table, as I started to walk towards the window, with my eyes searching for those birds. My eyes were curious and eager, searching for those beautiful birds. I placed my hands over the window, leaning over to look for those singers. Just as I was frantically turning my head sideways in excitement, I spotted a group of blue canaries seated over a tree nearby and singing out of joy. I was taken away by their song and looked at them in awe, with my hand holding my head. As I was immersed in their tunes, I suddenly heard someone call my name, "Liel, Liel........". I was looking everywhere around me to see who it was calling my name, and even the voice seemed familiar after a few seconds. At last, it was one of the canaries, I was shocked to see a bird speak. As I was looking at the bird talk, with a confused face, I just woke up with the naughty little cousin of mine throwing pillows at me. I was sleepy and was not in the mood to wake up, and as I frowned at him with my sleepy face, he ran to my mother, screaming in happiness for waking me up. As I was regaining my conscience, I heard my mom shout from the kitchen, "Liel, what have I told you? You should never sleep when the sun's up in the sky......". Then I got off my bed, meditated for a while, had a glass of water to wake up my body and soul, brushed my teeth, and started off to jog, gearing up the way out of my home. I heard the same tunes as in my dreams, I suddenly stopped and was looking all over to find where is it coming from. Found them on the branches of the short tree nearby, singing their beautiful song to mesmerize me.
